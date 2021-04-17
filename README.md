@@ -84,7 +84,7 @@ plt.savefig("ilustraciones/plot/Otros/{}".format("cuadrado"),dpi=150)
 ```
 
 
-![png](output_10_0.png)
+![png](ilustraciones/readme/output_10_0.png)
 
 
 
@@ -96,7 +96,7 @@ Square_dimension = Frac_dimension_computation_name_path(rec_x,rec_y,"Cuadrado","
 
 
 
-![png](output_11_1.png)
+![png](ilustraciones/readme/output_11_1.png)
 
 
 
@@ -121,7 +121,7 @@ plt.savefig("ilustraciones/plot/Otros/{}".format("sierpinski"),dpi=150)
 ```
 
 
-![png](output_14_0.png)
+![png](ilustraciones/readme/output_14_0.png)
 
 
 
@@ -134,7 +134,7 @@ Sierpinski_dimension = Frac_dimension_computation_name_path(sier_x,sier_y,
 
 
 
-![png](output_15_1.png)
+![png](ilustraciones/readme/output_15_1.png)
 
 
 
@@ -156,7 +156,7 @@ plt.savefig("ilustraciones/plot/Otros/{}".format("barcode"),dpi=150)
 ```
 
 
-![png](output_17_0.png)
+![png](ilustraciones/readme/output_17_0.png)
 
 
 
@@ -170,7 +170,7 @@ Barcode_dimension = Frac_dimension_computation_name_path(line_r_x,line_r_y,
 
 
 
-![png](output_18_1.png)
+![png](ilustraciones/readme/output_18_1.png)
 
 
 
@@ -212,14 +212,14 @@ Chr_19_Fd = Frac_dimension_computation_name_path(CG_x,CG_y,
 ```
 
 
-![png](output_21_0.png)
+![png](ilustraciones/readme/output_21_0.png)
 
 
     coefficient (fractal dimension) = 1.9904860729248137
 
 
 
-![png](output_21_2.png)
+![png](ilustraciones/readme/output_21_2.png)
 
 
 
@@ -252,14 +252,14 @@ Chr_19_Fd = Frac_dimension_computation_name_path(CG_x,CG_y,
 ```
 
 
-![png](output_23_0.png)
+![png](ilustraciones/readme/output_23_0.png)
 
 
     coefficient (fractal dimension) = 2.0
 
 
 
-![png](output_23_2.png)
+![png](ilustraciones/readme/output_23_2.png)
 
 
 
