@@ -19,7 +19,7 @@ Consideramos válidas las funciones para el cálculo de la dimensión a partir d
 
 
 ```python
-length = 100000
+length = 1000000
 ```
 
 ## Recta
@@ -41,19 +41,19 @@ plt.savefig("ilustraciones/plot/Otros/{}".format("recta"),dpi=150)
 ```
 
 
-![png](output_6_0.png)
+![png](ilustraciones/readme/output_6_0.png)
 
 
 
 ```python
-Line_dimension = Frac_dimension_computation_name(line_x,line_y,"ilustraciones/dim/Otros/Recta")
+Line_dimension = Frac_dimension_computation_name_path(line_x,line_y,"Recta","ilustraciones/dim/Otros/Recta")
 ```
 
     coefficient (fractal dimension) = 1.0
 
 
 
-![png](output_7_1.png)
+![png](ilustraciones/readme/output_7_1.png)
 
 
 
@@ -89,10 +89,10 @@ plt.savefig("ilustraciones/plot/Otros/{}".format("cuadrado"),dpi=150)
 
 
 ```python
-Square_dimension = Frac_dimension_computation_name(rec_x,rec_y,"ilustraciones/dim/Otros/Cuadrado")
+Square_dimension = Frac_dimension_computation_name_path(rec_x,rec_y,"Cuadrado","ilustraciones/dim/Otros/Cuadrado")
 ```
 
-    coefficient (fractal dimension) = 1.9615362805847147
+    coefficient (fractal dimension) = 2.0
 
 
 
@@ -126,10 +126,11 @@ plt.savefig("ilustraciones/plot/Otros/{}".format("sierpinski"),dpi=150)
 
 
 ```python
-Sierpinski_dimension = Frac_dimension_computation_name(sier_x,sier_y,"ilustraciones/dim/Otros/Sierpinski")
+Sierpinski_dimension = Frac_dimension_computation_name_path(sier_x,sier_y,
+                                                            "Sierpinski","ilustraciones/dim/Otros/Sierpinski")
 ```
 
-    coefficient (fractal dimension) = 1.6546925948509885
+    coefficient (fractal dimension) = 1.5849625007211563
 
 
 
@@ -160,10 +161,12 @@ plt.savefig("ilustraciones/plot/Otros/{}".format("barcode"),dpi=150)
 
 
 ```python
-Barcode_dimension = Frac_dimension_computation_name(line_r_x,line_r_y,"ilustraciones/dim/Otros/Código de barras")
+Barcode_dimension = Frac_dimension_computation_name_path(line_r_x,line_r_y,
+                                                         "Barcode",
+                                                         "ilustraciones/dim/Otros/Código de barras")
 ```
 
-    coefficient (fractal dimension) = 1.8581990300631681
+    coefficient (fractal dimension) = 1.9990631534946355
 
 
 
@@ -203,14 +206,16 @@ plt.savefig("ilustraciones/plot/ch19/{}.png".format(Chr.split(".")[0]),dpi=200)
 plt.show()
 plt.clf()
 
-Chr_19_Fd = Frac_dimension_computation_name(CG_x,CG_y,"ilustraciones/dim/ch19/{}".format(Chr.split(".")[0]))
+Chr_19_Fd = Frac_dimension_computation_name_path(CG_x,CG_y,
+                                                 Chr.split(".")[0],
+                                                 "ilustraciones/dim/ch19/{}".format(Chr.split(".")[0]))
 ```
 
 
 ![png](output_21_0.png)
 
 
-    coefficient (fractal dimension) = 1.8975485424091463
+    coefficient (fractal dimension) = 1.9904860729248137
 
 
 
@@ -241,14 +246,16 @@ plt.savefig("ilustraciones/plot/random/{}.png".format("random"),dpi=200)
 plt.show()
 plt.clf()
 
-Chr_19_Fd = Frac_dimension_computation_name(CG_x,CG_y,"ilustraciones/dim/random/{}".format("random"))
+Chr_19_Fd = Frac_dimension_computation_name_path(CG_x,CG_y,
+                                                 "random",
+                                                 "ilustraciones/dim/random/{}".format("random"))
 ```
 
 
 ![png](output_23_0.png)
 
 
-    coefficient (fractal dimension) = 1.9622509118831655
+    coefficient (fractal dimension) = 2.0
 
 
 
