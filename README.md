@@ -133,7 +133,7 @@ Sierpinski_dimension = Frac_dimension_computation_name_path(sier_x,sier_y,
 ![png](ilustraciones/readme/output_9_0.png)
 
 
-    coefficient (fractal dimension) = 1.6721652201416348
+    coefficient (fractal dimension) = 1.5849625007211563
 
 
 
@@ -170,7 +170,7 @@ Barcode_dimension = Frac_dimension_computation_name_path(line_r_x,line_r_y,
 ![png](ilustraciones/readme/output_11_0.png)
 
 
-    coefficient (fractal dimension) = 1.910143372756026
+    coefficient (fractal dimension) = 1.9991580426742062
 
 
 
