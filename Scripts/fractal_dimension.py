@@ -146,7 +146,7 @@ def Frac_dimension_computation_name(equis,ye,name):
 
 
 	coeffs= np.polyfit(EQUIS,YE, 1)
-	print(f"coefficient (fractal dimension) = {np.abs(coeffs[0])}")
+	print(f"Pendiente (Dimensión de Minkowski-Bouligand) = {np.abs(coeffs[0])}")
 
 	plt.scatter(EQUIS,YE)
 	plt.xlabel("log(1 / $\epsilon$)")
