@@ -1,6 +1,15 @@
 <center><h1>Dimensión fractal en diferentes conjuntos</h1></center>
 
-El presente notebook tiene por objetivo ilustrar la ejecución de las funciones desarrolladas para el cálculo de la dimensión fractal para subconjunto de $\mathbb{R}^{2}$.
+Se calcula la dimensión de Minkowski-Bouligand de diferentes conjuntos:
+
+- Una recta.
+- Un cuadrado.
+- Triángulo de Sierpinski.
+- Código de barras.
+- Juego del caos en una subcadena del cromosoma 19.
+- Juego del caos en una cadena aleatoria con el mismo diccionario del DNA.
+
+Todos ellos con el mismo número de elementos. Inicialmente se hizo para 1,000,000 puntos aunque este número puede modificarse cambiando el valor de la variable <i>length</i>.
 
 
 ```python
@@ -11,49 +20,47 @@ from libraries import *
 from fractal_dimension import *
 ```
 
-## Comparación entre conteo de cajas y dimensión topológica
-
-Para verificar que las funciones se comporten correctamente; las probamos primero con dos conjuntos arquetípicos: una línea recta y un cuadrado. 
-
-Consideramos válidas las funciones para el cálculo de la dimensión a partir del algoritmo de Minkowski-Bouling si es que éstas arrojaran las dimensiones iguales a 1.0 y 2.0 para los conjuntos antes mencionados, respectimante.
-
 
 ```python
 length = 1000000
 ```
 
+## Comparación entre conteo de cajas y dimensión topológica
+
+La recta, el cuadrado y el triángulo de Sierpinski tienen dimensiones: $1,2$ y $1.584$, respectivamente. Se calcula la dimensión de Minkowski-Bouligand para estos tres conjuntos. 
+
 ## Recta
 
-Generación de una recta con 1,000,000 puntos.
+Una recta horizontal
 
 
 ```python
+# Generación de coordinadas
 line_x = np.linspace(0,1,length)
 line_y = [0.5 for x in line_x]
-```
 
-
-```python
+# Graficación del conjunto
 plt.scatter(line_x,line_y,s=0.00005)
 plt.axis('equal')
 plt.axis('off')
-plt.savefig("ilustraciones/plot/Otros/{}".format("recta"),dpi=150)
-```
+# Descomentar la siguiente línea de código para guardar la figura
+#plt.savefig("ilustraciones/plot/Otros/{}".format("recta"),dpi=150)
+plt.show()
+plt.clf()
 
-
-![png](ilustraciones/readme/output_6_0.png)
-
-
-
-```python
+# Cálculo de la dimensión
 Line_dimension = Frac_dimension_computation_name_path(line_x,line_y,"Recta","ilustraciones/dim/Otros/Recta")
 ```
+
+
+![png](ilustraciones/readme/output_5_0.png)
+
 
     coefficient (fractal dimension) = 1.0
 
 
 
-![png](ilustraciones/readme/output_7_1.png)
+![png](ilustraciones/readme/output_5_2.png)
 
 
 
@@ -72,31 +79,30 @@ rec_coordinates = np.random.rand(length,2)
 # Seleccionamos las x,y como listas
 rec_x = rec_coordinates[:,0]
 rec_y = rec_coordinates[:,1]
-```
 
-
-```python
 # Graficamos para visualizar el conjunto
 plt.scatter(rec_x,rec_y,s=0.00005)
 plt.axis('equal')
 plt.axis('off')
-plt.savefig("ilustraciones/plot/Otros/{}".format("cuadrado"),dpi=150)
-```
 
+# Descomentar para guardar la gráfica
+#plt.savefig("ilustraciones/plot/Otros/{}".format("cuadrado"),dpi=150)
+plt.show()
+plt.clf()
 
-![png](ilustraciones/readme/output_10_0.png)
-
-
-
-```python
+# Dimensión
 Square_dimension = Frac_dimension_computation_name_path(rec_x,rec_y,"Cuadrado","ilustraciones/dim/Otros/Cuadrado")
 ```
+
+
+![png](ilustraciones/readme/output_7_0.png)
+
 
     coefficient (fractal dimension) = 2.0
 
 
 
-![png](ilustraciones/readme/output_11_1.png)
+![png](ilustraciones/readme/output_7_2.png)
 
 
 
@@ -110,67 +116,65 @@ Probamos ahora el correcto funcionamiento de las librerías desarrolladas espec�
 
 ```python
 sier_x,sier_y = SFI.Sierpinski_coordinates(Iteraciones=length)
-```
 
-
-```python
 plt.scatter(sier_x,sier_y,s=0.00005)
-#plt.axis('equal')
 plt.axis('off')
-plt.savefig("ilustraciones/plot/Otros/{}".format("sierpinski"),dpi=150)
-```
+# Decomentar para graficar
+#plt.savefig("ilustraciones/plot/Otros/{}".format("sierpinski"),dpi=150)
+plt.show()
+plt.clf()
 
-
-![png](ilustraciones/readme/output_14_0.png)
-
-
-
-```python
+# Dimensión
 Sierpinski_dimension = Frac_dimension_computation_name_path(sier_x,sier_y,
                                                             "Sierpinski","ilustraciones/dim/Otros/Sierpinski")
 ```
 
-    coefficient (fractal dimension) = 1.5849625007211563
+
+![png](ilustraciones/readme/output_9_0.png)
+
+
+    coefficient (fractal dimension) = 1.6721652201416348
 
 
 
-![png](ilustraciones/readme/output_15_1.png)
+![png](ilustraciones/readme/output_9_2.png)
 
 
 
     <Figure size 432x288 with 0 Axes>
 
 
+## Código de barras
+
 
 ```python
+# Generación del conjunto
 line_r_x = sorted(sier_x)
 line_r_y = [0.5 + 1*(np.random.rand()) for x in line_r_x]
-```
 
-
-```python
+# Graficación
 plt.scatter(line_r_x,line_r_y,s=0.00005)
 plt.axis('equal')
 plt.axis('off')
-plt.savefig("ilustraciones/plot/Otros/{}".format("barcode"),dpi=150)
-```
+#plt.savefig("ilustraciones/plot/Otros/{}".format("barcode"),dpi=150)
+plt.show()
+plt.clf()
 
-
-![png](ilustraciones/readme/output_17_0.png)
-
-
-
-```python
+# Dimensión
 Barcode_dimension = Frac_dimension_computation_name_path(line_r_x,line_r_y,
                                                          "Barcode",
                                                          "ilustraciones/dim/Otros/Código de barras")
 ```
 
-    coefficient (fractal dimension) = 1.9990631534946355
+
+![png](ilustraciones/readme/output_11_0.png)
+
+
+    coefficient (fractal dimension) = 1.910143372756026
 
 
 
-![png](ilustraciones/readme/output_18_1.png)
+![png](ilustraciones/readme/output_11_2.png)
 
 
 
@@ -179,7 +183,7 @@ Barcode_dimension = Frac_dimension_computation_name_path(line_r_x,line_r_y,
 
 ## Genoma humano
 
-Se emula el juego del caos con el genoma humano a basándonos en las ideas de <u>artículo</u>
+Juego del caos en una subcadena del cromosoma 19 y el arreglo de vértices dado por el diccionario <i>Dic_2</i>.
 
 
 ```python
@@ -202,7 +206,7 @@ CG_y = [i[1] for i in CG_Chr]
 plt.scatter(CG_x,CG_y,s=0.0000125)
 plt.axis('equal')
 plt.axis('off')
-plt.savefig("ilustraciones/plot/ch19/{}.png".format(Chr.split(".")[0]),dpi=200)
+# plt.savefig("ilustraciones/plot/ch19/{}.png".format(Chr.split(".")[0]),dpi=200)
 plt.show()
 plt.clf()
 
@@ -212,21 +216,23 @@ Chr_19_Fd = Frac_dimension_computation_name_path(CG_x,CG_y,
 ```
 
 
-![png](ilustraciones/readme/output_21_0.png)
+![png](ilustraciones/readme/output_14_0.png)
 
 
     coefficient (fractal dimension) = 1.9904860729248137
 
 
 
-![png](ilustraciones/readme/output_21_2.png)
+![png](ilustraciones/readme/output_14_2.png)
 
 
 
     <Figure size 432x288 with 0 Axes>
 
 
-## Random
+## Cadena de aleatoria de caracteres
+
+A partir del diccionario de nucleótidos, se genera una cadena de letras generadas aleatoreamente con distribución de probabilidad uniforme.
 
 
 ```python
@@ -242,7 +248,7 @@ CG_y = [i[1] for i in CG_Chr]
 plt.scatter(CG_x,CG_y,s=0.0000125)
 plt.axis('equal')
 plt.axis('off')
-plt.savefig("ilustraciones/plot/random/{}.png".format("random"),dpi=200)
+# plt.savefig("ilustraciones/plot/random/{}.png".format("random"),dpi=200)
 plt.show()
 plt.clf()
 
@@ -252,14 +258,14 @@ Chr_19_Fd = Frac_dimension_computation_name_path(CG_x,CG_y,
 ```
 
 
-![png](ilustraciones/readme/output_23_0.png)
+![png](ilustraciones/readme/output_16_0.png)
 
 
     coefficient (fractal dimension) = 2.0
 
 
 
-![png](ilustraciones/readme/output_23_2.png)
+![png](ilustraciones/readme/output_16_2.png)
 
 
 
