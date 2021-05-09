@@ -165,7 +165,7 @@ def Frac_dimension_computation_name_path(equis,ye,name,path):
 	EQUIS = []
 	YE = []
 	counter_iter = 1
-	while bin_like_basetwo([min(equis),max(equis)],Intera)[1] > 1*find_min_distance_list(equis) and counter_iter < 8:
+	while bin_like_basetwo([min(equis),max(equis)],Intera)[1] > 1*find_min_distance_list(equis) and counter_iter < 9:
 	    iteration.append(bin_like_basetwo([0,1],Intera)[0])
 	    
 	    # Histograma

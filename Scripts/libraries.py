@@ -19,3 +19,8 @@ from DNA import *
 from SFI import *
 
 #from fractal_dimension import *
+
+"""
+Para una graficación con diferente color de fondo
+"""
+#plt.style.use('dark_background')

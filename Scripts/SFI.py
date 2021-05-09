@@ -391,6 +391,44 @@ def Sierpinski_coordinates(Iteraciones=100000):
     #plt.axis('off')
     #plt.show()
     return equis, ye
+
+#def henon(iterations,a=1.4,b=0.3,x0=0.5):
+#    """
+#    Calcula las coordenadas del mapa de henón
+#    """
+#    ye = [b*x0]
+#    equis = [1 - a*(x0**2) + ye[-1]]
+#   
+#    for i in range(iterations-1):
+#        ye.append(b*equis[-1])
+#        equis.append(1 - a*(equis[-1]**2) + ye[-1])
+#    return equis,ye
+
+
+def henon_attractor(x, y, a, b):
+    '''Computes the next step in the Henon 
+    map for arguments x, y with kwargs a and
+    b as constants.
+    '''
+    x_next = 1 - a * x ** 2 + y
+    y_next = b * x
+    return x_next, y_next
+
+def henon(iteration, a=1.4, b=0.3):
+    X = np.zeros(iteration + 1)
+    Y = np.zeros(iteration + 1)
+
+    # starting point
+    X[0], Y[0] = 0, 0
+
+    # add points to array
+    for i in range(iteration):
+        x_next, y_next = henon_attractor(X[i], Y[i], a, b)
+        X[i+1] = x_next
+        Y[i+1] = y_next
+        
+    return X,Y
+
     
 def Chaos_Game(N=3,Iteraciones=10000,k1=1/2, k2=1/2):
     P_N = N
@@ -443,3 +481,4 @@ def Germi_Beta_lmfit(x,K,b,a,N):
 ################### Miscelaneo ####################
 def line(equis,a,b):
     return b + a * x
+
