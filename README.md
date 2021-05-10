@@ -53,14 +53,14 @@ Line_dimension = Frac_dimension_computation_name_path(line_x,line_y,"Recta","ilu
 ```
 
 
-![png](Ilustraciones/readme/output_5_0.png)
+![png](ilustraciones/readme/output_5_0.png)
 
 
     coefficient (fractal dimension) = 1.0000000000000002
 
 
 
-![png](Ilustraciones/readme/output_5_2.png)
+![png](ilustraciones/readme/output_5_2.png)
 
 
 
@@ -95,14 +95,14 @@ Square_dimension = Frac_dimension_computation_name_path(rec_x,rec_y,"Cuadrado","
 ```
 
 
-![png](Ilustraciones/readme/output_7_0.png)
+![png](ilustraciones/readme/output_7_0.png)
 
 
     coefficient (fractal dimension) = 1.9973424901753036
 
 
 
-![png](Ilustraciones/readme/output_7_2.png)
+![png](ilustraciones/readme/output_7_2.png)
 
 
 
@@ -130,14 +130,14 @@ Sierpinski_dimension = Frac_dimension_computation_name_path(sier_x,sier_y,
 ```
 
 
-![png](Ilustraciones/readme/output_9_0.png)
+![png](ilustraciones/readme/output_9_0.png)
 
 
     coefficient (fractal dimension) = 1.5849625007211565
 
 
 
-![png](Ilustraciones/readme/output_9_2.png)
+![png](ilustraciones/readme/output_9_2.png)
 
 
 
@@ -165,14 +165,14 @@ Henon_dimension = Frac_dimension_computation_name_path(henon_x,
 ```
 
 
-![png](Ilustraciones/readme/output_11_0.png)
+![png](ilustraciones/readme/output_11_0.png)
 
 
     coefficient (fractal dimension) = 1.2302328555684185
 
 
 
-![png](Ilustraciones/readme/output_11_2.png)
+![png](ilustraciones/readme/output_11_2.png)
 
 
     CPU times: user 14.7 s, sys: 223 ms, total: 14.9 s
@@ -206,14 +206,14 @@ Barcode_dimension = Frac_dimension_computation_name_path(line_r_x,line_r_y,
 ```
 
 
-![png](Ilustraciones/readme/output_13_0.png)
+![png](ilustraciones/readme/output_13_0.png)
 
 
     coefficient (fractal dimension) = 1.9887853325668243
 
 
 
-![png](Ilustraciones/readme/output_13_2.png)
+![png](ilustraciones/readme/output_13_2.png)
 
 
 
@@ -255,14 +255,14 @@ Chr_19_Fd = Frac_dimension_computation_name_path(CG_x,CG_y,
 ```
 
 
-![png](Ilustraciones/readme/output_16_0.png)
+![png](ilustraciones/readme/output_16_0.png)
 
 
     coefficient (fractal dimension) = 1.9579468262818678
 
 
 
-![png](Ilustraciones/readme/output_16_2.png)
+![png](ilustraciones/readme/output_16_2.png)
 
 
 
@@ -297,14 +297,14 @@ Chr_19_Fd = Frac_dimension_computation_name_path(CG_x,CG_y,
 ```
 
 
-![png](Ilustraciones/readme/output_18_0.png)
+![png](ilustraciones/readme/output_18_0.png)
 
 
     coefficient (fractal dimension) = 1.9973476476442626
 
 
 
-![png](Ilustraciones/readme/output_18_2.png)
+![png](ilustraciones/readme/output_18_2.png)
 
 
 
