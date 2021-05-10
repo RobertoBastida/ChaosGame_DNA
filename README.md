@@ -27,7 +27,7 @@ length = 1000000
 
 ## Comparación entre conteo de cajas y dimensión topológica
 
-La recta, el cuadrado y el triángulo de Sierpinski tienen dimensiones: $1,2$ y $1.584$, respectivamente. Se calcula la dimensión de Minkowski-Bouligand para estos tres conjuntos. 
+La recta, el cuadrado, el triángulo de Sierpinski y el conjunto de Henón tienen dimensiones: $1, 2, 1.584$ y $1.26$, respectivamente. Se calcula la dimensión de Minkowski-Bouligand para estos conjuntos con el fin de validar el correcto funcionamiento de la paquetería desarrollada en el presente proyecto para el cálculo de la dimensión.
 
 ## Recta
 
@@ -53,14 +53,14 @@ Line_dimension = Frac_dimension_computation_name_path(line_x,line_y,"Recta","ilu
 ```
 
 
-![png](ilustraciones/readme/output_5_0.png)
+![png](Ilustraciones/readme/output_5_0.png)
 
 
-    coefficient (fractal dimension) = 1.0
+    coefficient (fractal dimension) = 1.0000000000000002
 
 
 
-![png](ilustraciones/readme/output_5_2.png)
+![png](Ilustraciones/readme/output_5_2.png)
 
 
 
@@ -95,14 +95,14 @@ Square_dimension = Frac_dimension_computation_name_path(rec_x,rec_y,"Cuadrado","
 ```
 
 
-![png](ilustraciones/readme/output_7_0.png)
+![png](Ilustraciones/readme/output_7_0.png)
 
 
-    coefficient (fractal dimension) = 2.0
+    coefficient (fractal dimension) = 1.9973424901753036
 
 
 
-![png](ilustraciones/readme/output_7_2.png)
+![png](Ilustraciones/readme/output_7_2.png)
 
 
 
@@ -130,14 +130,53 @@ Sierpinski_dimension = Frac_dimension_computation_name_path(sier_x,sier_y,
 ```
 
 
-![png](ilustraciones/readme/output_9_0.png)
+![png](Ilustraciones/readme/output_9_0.png)
 
 
-    coefficient (fractal dimension) = 1.5849625007211563
+    coefficient (fractal dimension) = 1.5849625007211565
 
 
 
-![png](ilustraciones/readme/output_9_2.png)
+![png](Ilustraciones/readme/output_9_2.png)
+
+
+
+    <Figure size 432x288 with 0 Axes>
+
+
+# Mapa de Henón
+
+
+```python
+%%time
+henon_x,henon_y = SFI.henon(length)
+
+plt.scatter(henon_x,henon_y,s=0.00005)
+plt.axis('off')
+# Decomentar para graficar
+plt.savefig("ilustraciones/plot/Otros/{}".format("henon"),dpi=150)
+plt.show()
+plt.clf()
+
+Henon_dimension = Frac_dimension_computation_name_path(henon_x,
+                                                       henon_y,
+                                                       "Henon",
+                                                       "ilustraciones/dim/Otros/Henon")
+```
+
+
+![png](Ilustraciones/readme/output_11_0.png)
+
+
+    coefficient (fractal dimension) = 1.2302328555684185
+
+
+
+![png](Ilustraciones/readme/output_11_2.png)
+
+
+    CPU times: user 14.7 s, sys: 223 ms, total: 14.9 s
+    Wall time: 14.9 s
 
 
 
@@ -167,14 +206,14 @@ Barcode_dimension = Frac_dimension_computation_name_path(line_r_x,line_r_y,
 ```
 
 
-![png](ilustraciones/readme/output_11_0.png)
+![png](Ilustraciones/readme/output_13_0.png)
 
 
-    coefficient (fractal dimension) = 1.9991580426742062
+    coefficient (fractal dimension) = 1.9887853325668243
 
 
 
-![png](ilustraciones/readme/output_11_2.png)
+![png](Ilustraciones/readme/output_13_2.png)
 
 
 
@@ -216,14 +255,14 @@ Chr_19_Fd = Frac_dimension_computation_name_path(CG_x,CG_y,
 ```
 
 
-![png](ilustraciones/readme/output_14_0.png)
+![png](Ilustraciones/readme/output_16_0.png)
 
 
-    coefficient (fractal dimension) = 1.9904860729248137
+    coefficient (fractal dimension) = 1.9579468262818678
 
 
 
-![png](ilustraciones/readme/output_14_2.png)
+![png](Ilustraciones/readme/output_16_2.png)
 
 
 
@@ -258,14 +297,14 @@ Chr_19_Fd = Frac_dimension_computation_name_path(CG_x,CG_y,
 ```
 
 
-![png](ilustraciones/readme/output_16_0.png)
+![png](Ilustraciones/readme/output_18_0.png)
 
 
-    coefficient (fractal dimension) = 2.0
+    coefficient (fractal dimension) = 1.9973476476442626
 
 
 
-![png](ilustraciones/readme/output_16_2.png)
+![png](Ilustraciones/readme/output_18_2.png)
 
 
 
