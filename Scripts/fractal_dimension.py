@@ -123,6 +123,34 @@ def Frac_dimension_computation(equis,ye):
 
 	return EQUIS, YE, coeffs[0]
 
+
+def Frac_dimension_computation_noplot(equis,ye):
+	Intera = 2
+	iteration = []
+	EQUIS = []
+	YE = []
+	counter_iter = 1
+	while bin_like_basetwo([min(equis),max(equis)],Intera)[1] > 1*find_min_distance_list(equis) and counter_iter < 8:
+	    iteration.append(bin_like_basetwo([0,1],Intera)[0])
+	    
+	    # Histograma
+	    bi = bin_like_basetwo([min(equis),max(equis)],Intera)[0]
+	    H = np.histogram2d(equis,ye, bins=((bi,bi)))
+	    YE.append(np.log(np.sum(H[0]>0)))
+	    EQUIS.append(np.log(1/bin_like_basetwo([0,1],Intera)[1]))
+	    
+	    #print(bin_like_basetwo([0,1],Intera)[1],find_min_distance_list(equis))
+	    #print(np.sum(H[0]>0))
+	    
+	    Intera += 1
+	    counter_iter +=1
+
+
+	coeffs= np.polyfit(EQUIS,YE, 1)
+
+	return EQUIS, YE, coeffs[0]
+
+
 def Frac_dimension_computation_name(equis,ye,name):
 	Intera = 2
 	iteration = []
